@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .search {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .searchIpDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  
+  .ipInfoList {
+    display: none;
+  }  
+
+  .ipTextField {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .ipButton {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ipButton:hover {
+    background-color: #3e8e41;
+    border-color: #3e8e41;
+  }
+  
+  ul {
+    list-style: none;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
