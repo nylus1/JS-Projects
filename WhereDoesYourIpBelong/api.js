@@ -38,7 +38,7 @@ function displayIpInfo(data) {
         ipList.appendChild(listItem);
     });
 
-    // Get the download button for the IP download
+    // Get the download button for download the ip info
     const downloadBtn = document.getElementById('downloadButton');
     downloadBtn.addEventListener('click', () => {
         // Create a Blob object with the IP data in text format
