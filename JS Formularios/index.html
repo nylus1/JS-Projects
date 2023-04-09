@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>ISG</title>
+</head>
+
+<body onload="previewSound()">
+    <div class="header">
+        <h1>📝Informe de incidencia📝</h1>
+    </div>
+
+    <div class="content">
+        <div class="left-img">
+            <img id="img" src="img/produccion.png">
+        </div>
+        <div class="right-form">
+            <p>Tipo de Incidencia:
+                <select class="selector" onchange="changeImage(this.value)">
+                    <option value="img/produccion.png">Producción</option>
+                    <option value="img/distribucion.png">Distribución</option>
+                    <option value="img/oficina.png">Oficina</option>
+                </select>
+            </p>
+            <p>Numero de Serie: &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="serial" id="serial" maxlength="8" oninput="removeError()">
+            </p>
+            <p><input type="button" value="Mostrar descripción" class="button" onclick="openBox()"></p>
+            <p><textarea id="description" rows="10" cols="45" style="display: none;">&nbsp;</textarea></p>
+            
+
+
+            <!-- La primera mejora es el poder añadir un archivo a la incidencia. Uso un "enctype="multipart/form-data" para especificar que queremos añadir un archivo, solo aceptando imágenes. -->
+
+            <div class="file-upload">
+                <form enctype="multipart/form-data" accept="img/*">
+                    <br>
+                    <label for="fileUpload">Adjuntar archivo de incidencia:</label>
+                    <br><br>
+                    <input type="file" id="fileUpload" name="fileUpload" accept="img/*">
+                    <br><br>
+                    <img id="preview" />
+                    <br><br>
+                </form>
+                <input type="button" value="Enviar datos" class="button" onclick="checkSerial()">
+                
+                <h2 id="error">&nbsp;</h2>  
+
+                <!-- Script para mostrar la preview de la foto seleccionada. Se seleccionan los elementos de entrada mediante el ID del input e img.
+            Luego se usa un EventListener"change" para poder detectar el cambio (seleccion de archivo). Posteriormente se usa la API fileReader para
+            obtener los datos de la imagen en una URL, que luego en el EventListener"load" atribuiremos al preview src para poder mostrar asi la vista previa.-->
+
+                <script>
+                    const input = document.getElementById("fileUpload");
+                    const preview = document.getElementById("preview");
+
+                    input.addEventListener("change", function () {
+                        const file = this.files[0];
+                        const reader = new FileReader();
+
+                        reader.addEventListener("load", function () {
+                            preview.src = reader.result;
+                        });
+
+                        reader.readAsDataURL(file);
+                    });
+                </script>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+<script src="scripts.js"></script>
+
+</html>
