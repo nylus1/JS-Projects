@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .fondo {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        h1{
+            text-align: center;
+            font-family: "Segoe UI";
+            font-size: large;
+        }
+    </style>
+    <title>Fondo aleatrio</title>
+</head>
+<body>
+    <script>
+        let rojo = parseInt(Math.random()*255)
+        let verde = parseInt(Math.random()*255)
+        let azul = parseInt(Math.random()*255)
+        document.write(
+            `<div class='fondo' `+
+            `style = 'background-color:rgb(${rojo},${verde},${azul})'>`+
+            `<h1>Presiona F5 para cambiar de fondo</h1>`+
+            `</div>`
+        )
+    </script>
+</body>
+</html>

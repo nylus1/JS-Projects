@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+body {
+    background: #111;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cuadro {
+    background: #1d1d1d;
+    height: 50px;
+    width: 50px;
+    margin: 2px;
+    transition: 2s ease;
+}
+
+.cuadro:hover {
+    transition-duration: 0s;
+}
